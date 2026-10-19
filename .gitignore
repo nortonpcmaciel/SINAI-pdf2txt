@@ -1,0 +1,21 @@
+# Dados de entrada e saídas de clientes
+*.pdf
+*.csv
+*.json
+*.txt
+!requirements.txt
+extraction-inspect.*
+resultado.*
+
+# Ambiente local
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+.codex/
+.agents/
+
+# Capturas locais
+pagina-atualizada.png
