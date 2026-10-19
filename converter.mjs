@@ -1,5 +1,5 @@
-import {getDocument, GlobalWorkerOptions} from './pdf.mjs';
-GlobalWorkerOptions.workerSrc = new URL('./pdf.worker.mjs', import.meta.url).href;
+import {getDocument, GlobalWorkerOptions} from './pdf.mjs?v=2';
+GlobalWorkerOptions.workerSrc = new URL('./pdf.worker.mjs?v=2', import.meta.url).href;
 
 export async function convertPDF(file, normalize, progress = () => {}) {
   if (!file.size || file.size > 30 * 1024 * 1024) throw Error('Selecione um PDF de até 30 MB.');

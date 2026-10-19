@@ -4,7 +4,7 @@ Página web de funcionamento local para converter relatórios de inadimplência 
 
 ## Acessar online
 
-Abra https://nortonpcmaciel.github.io/SINAI-pdf2txt/ em um navegador atualizado. A conversão usa PDF.js 5.4.296 e acontece inteiramente no navegador, sem upload dos PDFs. Não exige Python para uso online.
+Abra https://nortonpcmaciel.github.io/SINAI-pdf2txt/ em um navegador atualizado. A conversão usa a distribuição de compatibilidade (legacy) do PDF.js 5.4.296 e acontece inteiramente no navegador, sem upload dos PDFs. Não exige Python para uso online.
 
 ## Executar no Windows
 
@@ -55,4 +55,4 @@ Na versão online, os PDFs são processados na memória do navegador e não são
 
 ## Dependência de terceiros
 
-PDF.js (Mozilla), versão 5.4.296, incluído nos arquivos `pdf.mjs` e `pdf.worker.mjs`, sob licença Apache 2.0 disponível em `PDFJS-LICENSE`. O arquivo `converter.mjs` adapta a extração ao modelo do relatório.
+PDF.js (Mozilla), versão 5.4.296, distribuição legacy com suporte a APIs ausentes em navegadores anteriores, incluído nos arquivos `pdf.mjs` e `pdf.worker.mjs`, sob licença Apache 2.0 disponível em `PDFJS-LICENSE`. O arquivo `converter.mjs` adapta a extração ao modelo do relatório.
