@@ -70,13 +70,13 @@ def convert(data):
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = self.path.split('?', 1)[0]
-        if path not in ('/', '/index.html', '/logo_sinai-transparente.png'):
+        if path not in ('/', '/index.html', '/logo_sinai-transparente.png', '/converter.mjs', '/pdf.mjs', '/pdf.worker.mjs'):
             self.send_error(404)
             return
         is_logo = path == '/logo_sinai-transparente.png'
-        body = (ROOT / ('logo_sinai-transparente.png' if is_logo else 'index.html')).read_bytes()
+        body = (ROOT / ('index.html' if path == '/' else path.lstrip('/'))).read_bytes()
         self.send_response(200)
-        self.send_header('Content-Type', 'image/png' if is_logo else 'text/html; charset=utf-8')
+        self.send_header('Content-Type', 'image/png' if is_logo else ('text/javascript; charset=utf-8' if path.endswith('.mjs') else 'text/html; charset=utf-8'))
         self.send_header('Content-Length', str(len(body)))
         self.end_headers()
         self.wfile.write(body)

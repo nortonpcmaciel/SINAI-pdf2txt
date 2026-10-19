@@ -2,6 +2,10 @@
 
 Página web de funcionamento local para converter relatórios de inadimplência do IMOBSOFT em listas de nomes e celulares para envio de SMS em massa.
 
+## Acessar online
+
+Abra https://nortonpcmaciel.github.io/SINAI-pdf2txt/ em um navegador atualizado. A conversão usa PDF.js 5.4.296 e acontece inteiramente no navegador, sem upload dos PDFs. Não exige Python para uso online.
+
 ## Executar no Windows
 
 1. Instale o Python 3 com a opção de adicioná-lo ao PATH.
@@ -39,7 +43,7 @@ MARIA,94987654321
 
 Compatível com PDFs com texto no modelo **Relação das Inadimplências** do IMOBSOFT. Outros layouts precisam de adaptação. PDFs de imagens devem passar por OCR antes da importação; o aplicativo não realiza OCR.
 
-O servidor escuta apenas em `127.0.0.1`. Os PDFs são processados em memória neste computador e não são enviados a serviços externos. Relatórios e listas de clientes estão excluídos do controle de versão pelo `.gitignore`.
+Na versão online, os PDFs são processados na memória do navegador e não são enviados a serviços externos. Na execução local, o servidor escuta apenas em `127.0.0.1`. Relatórios e listas de clientes estão excluídos do controle de versão pelo `.gitignore`.
 
 ## Arquivos
 
@@ -48,3 +52,7 @@ O servidor escuta apenas em `127.0.0.1`. Os PDFs são processados em memória ne
 - `logo_sinai-transparente.png`: logotipo usado no cabeçalho.
 - `iniciar.bat`: iniciador para Windows.
 - `requirements.txt`: dependência Python.
+
+## Dependência de terceiros
+
+PDF.js (Mozilla), versão 5.4.296, incluído nos arquivos `pdf.mjs` e `pdf.worker.mjs`, sob licença Apache 2.0 disponível em `PDFJS-LICENSE`. O arquivo `converter.mjs` adapta a extração ao modelo do relatório.
